@@ -6,24 +6,19 @@ Test
     </div>
     
     <script>
- 
-    $Lightning.use(
-        "c:schedulerApp", // Name of Aura Dependency app where c is namespace.
-        function (
-        ) { // Callback function
-            $Lightning.createComponent(
-                "c:skTest", // Name of Lightning Component where c is namespace.
-                {     
-                   
-                }, // attribute parameters
-                "LightningAppDivId", // Id of the element where Lightning Component will be rendered.
-                function(cmp){
-                    document.querySelector('c-show-slots').addEventListener("scheduledRecord", function (event) {
-                        console.log('vf event data window listener => ', event.detail);
-                    });
+        $Lightning.use("c:schedulerApp", function () {
+            $Lightning.createComponent("c:skTest", {
+
+            },
+                "LightningAppDivId",
+                function (cmp) {
+                    console.log("LWC helloWorld was created");
+                    // do some stuff 
                 }
             );
         },
-'https://partial-honest1.cs159.force.com/'
-    );
+            'https://partial-honest1.cs159.force.com'
+        );
+     
+      
     </script>  
